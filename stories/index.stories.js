@@ -16,22 +16,26 @@ export default {
 };
 
 function Template({
-  isShow = true,
+  isShow = false,
   isBackdropActive = true,
   textColor = '#000',
   backgroundColor = '#fefefe',
-  backdropColor = '#000',
+  backdropColor = '#00000040',
   borderColor = '#888',
   buttonColor = '#aaaaaa',
   slot,
 }) {
   return html`
+    <button @click=${() => document.getElementById('modal').showModal()}>
+      Show modal
+    </button>
     <lit-modal
-      style="--lit-modal-text-color: ${textColor || '#000'}, 
-      --lit-modal-background-color: ${backgroundColor || '#fefefe'},
-      --lit-modal-backdrop-color: ${backdropColor || '#000'},
-      --lit-modal-border-color: ${borderColor || '#888'},
-      --lit-modal-button-color: ${buttonColor || '#aaaaaa'},
+      id="modal"
+      style="--lit-modal-text-color: ${textColor || '#000'}; 
+      --lit-modal-background-color: ${backgroundColor || '#fefefe'};
+      --lit-modal-backdrop-color: ${backdropColor || '#00000040'};
+      --lit-modal-border-color: ${borderColor || '#888'};
+      --lit-modal-btn-color: ${buttonColor || '#aaaaaa'};
       "
       .isShow=${isShow}
       .isBackdropActive=${isBackdropActive}
