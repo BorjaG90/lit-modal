@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en-GB">
+
 <head>
   <meta charset="utf-8">
   <style>
@@ -8,6 +9,7 @@
     }
   </style>
 </head>
+
 <body>
   <div id="demo"></div>
 
@@ -15,15 +17,23 @@
     import { html, render } from 'lit-html';
     import '../lit-modal.js';
 
-    const title = 'Hello owc World!';
+    const backdropActive = false;
     render(
       html`
-        <lit-modal .title=${title}>
-          some more light-dom
+        <button 
+          @click=${() => document.getElementById('modal').showModal()} 
+          id="btn"
+        >Open modal</button>
+        <lit-modal id="modal" .isBackdropActive=${backdropActive}>
+          <div>
+            <h1>Title of modal</h1>
+            <p>Content of modal</p>
+          </div>
         </lit-modal>
       `,
       document.querySelector('#demo')
     );
   </script>
 </body>
+
 </html>
