@@ -1,6 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable no-debugger */
-/* eslint-disable lit-a11y/click-events-have-key-events */
 import { html, css, LitElement } from 'lit-element';
 import { nothing } from 'lit-html';
 import '@polymer/iron-icons/iron-icons.js';
@@ -23,20 +20,20 @@ export class LitModal extends LitElement {
         width: 100%;
         height: 100%;
         overflow: auto;
-        background-color: rgb(0, 0, 0);
+        background-color: var(--lit-modal-backdrop-color, #000);
         background-color: rgba(0, 0, 0, 0.4);
       }
 
       .modal {
-        background-color: #fefefe;
+        background-color: var(--lit-modal-background-color, #fefefe);
         margin: auto;
         padding: 20px;
-        border: 1px solid #888;
+        border: 1px solid var(--lit-modal-border-color, #888);
         width: 80%;
       }
 
       .btn-close {
-        color: #aaaaaa;
+        color: var(--lit-modal-btn-color, #aaaaaa);
         float: right;
         font-size: 28px;
         font-weight: bold;
@@ -44,7 +41,7 @@ export class LitModal extends LitElement {
 
       .btn-close:hover,
       .btn-close:focus {
-        color: #000;
+        color: var(--lit-modal-text-color, #000);
         text-decoration: none;
         cursor: pointer;
       }
@@ -74,15 +71,27 @@ export class LitModal extends LitElement {
     this.isShow = false;
   }
 
+  onKeyup(e) {
+    if (e.code in [13, 27, 32]) {
+      this.closeModal();
+    }
+  }
+
   render() {
     return html`
       <div
         class="backdrop"
         @click="${this.isBackdropActive ? this.closeModal : nothing}"
+        @keyup="${this.onKeyup}"
         style="${this.isShow ? 'display: block' : 'display: none'}"
       >
         <div class="modal">
-          <span @click="${this.closeModal}" class="btn-close">&times;</span>
+          <span
+            @click="${this.closeModal}"
+            @keyup="${this.onKeyup}"
+            class="btn-close"
+            >&times;</span
+          >
           <slot></slot>
         </div>
       </div>

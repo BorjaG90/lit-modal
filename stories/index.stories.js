@@ -5,18 +5,36 @@ export default {
   title: 'LitModal',
   component: 'lit-modal',
   argTypes: {
-    title: { control: 'text' },
-    counter: { control: 'number' },
+    isShow: { control: 'boolean' },
+    isBackdropActive: { control: 'boolean' },
     textColor: { control: 'color' },
+    backgroundColor: { control: 'color' },
+    backdropColor: { control: 'color' },
+    borderColor: { control: 'color' },
+    buttonColor: { control: 'color' },
   },
 };
 
-function Template({ title = 'Hello world', counter = 5, textColor, slot }) {
+function Template({
+  isShow = true,
+  isBackdropActive = true,
+  textColor = '#000',
+  backgroundColor = '#fefefe',
+  backdropColor = '#000',
+  borderColor = '#888',
+  buttonColor = '#aaaaaa',
+  slot,
+}) {
   return html`
     <lit-modal
-      style="--lit-modal-text-color: ${textColor || 'black'}"
-      .title=${title}
-      .counter=${counter}
+      style="--lit-modal-text-color: ${textColor || '#000'}, 
+      --lit-modal-background-color: ${backgroundColor || '#fefefe'},
+      --lit-modal-backdrop-color: ${backdropColor || '#000'},
+      --lit-modal-border-color: ${borderColor || '#888'},
+      --lit-modal-button-color: ${buttonColor || '#aaaaaa'},
+      "
+      .isShow=${isShow}
+      .isBackdropActive=${isBackdropActive}
     >
       ${slot}
     </lit-modal>
@@ -24,21 +42,28 @@ function Template({ title = 'Hello world', counter = 5, textColor, slot }) {
 }
 
 export const Regular = Template.bind({});
-
-export const CustomTitle = Template.bind({});
-CustomTitle.args = {
-  title: 'My title',
-};
-
-export const CustomCounter = Template.bind({});
-CustomCounter.args = {
-  counter: 123456,
+Regular.args = {
+  slot: html`<p>Regular component</p>`,
 };
 
 export const SlottedContent = Template.bind({});
 SlottedContent.args = {
-  slot: html`<p>Slotted content</p>`,
+  slot: html`<h1>Slotted content</h1>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ad
+      aliquam consequatur molestiae fugiat quo placeat, quos ea, repellat
+      accusamus commodi ducimus sit consequuntur at laborum. Animi alias
+      laudantium consequatur.
+    </p>`,
 };
 SlottedContent.argTypes = {
   slot: { table: { disable: true } },
+};
+
+export const BackdropInactive = Template.bind({});
+BackdropInactive.args = {
+  isBackdropActive: false,
+};
+BackdropInactive.args = {
+  slot: html`<p>Backdrop inactive</p>`,
 };
