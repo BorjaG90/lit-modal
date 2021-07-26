@@ -3,6 +3,10 @@ import { nothing } from 'lit-html';
 import '@polymer/iron-icons/iron-icons.js';
 
 export class LitModal extends LitElement {
+  static get is() {
+    return 'lit-modal';
+  }
+
   static get styles() {
     return css`
       :host {

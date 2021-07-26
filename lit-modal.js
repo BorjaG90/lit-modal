@@ -1,3 +1,3 @@
 import { LitModal } from './src/LitModal.js';
 
-window.customElements.define('lit-modal', LitModal);
+window.customElements.define(LitModal.is, LitModal);
