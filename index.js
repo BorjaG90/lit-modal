@@ -1,1 +1,3 @@
-export { LitModal } from './src/LitModal.js';
+import { LitModal } from './src/LitModal.js';
+
+window.customElements.define(LitModal.is, LitModal);
