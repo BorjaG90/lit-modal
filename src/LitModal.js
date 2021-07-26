@@ -24,7 +24,7 @@ export class LitModal extends LitElement {
         width: 100%;
         height: 100%;
         overflow: auto;
-        background-color: var(--lit-modal-backdrop-color, #000);
+        background-color: var(--lit-modal-backdrop-color, #00000040) !important;
         background-color: rgba(0, 0, 0, 0.4);
       }
 
