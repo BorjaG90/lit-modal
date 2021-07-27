@@ -17,7 +17,7 @@ export default {
 
 function Template({
   isShow = false,
-  closeByBackdrop = true,
+  closeByBackdrop = false,
   textColor = '#000',
   backgroundColor = '#fefefe',
   backdropColor = '#00000040',
