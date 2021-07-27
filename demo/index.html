@@ -16,15 +16,14 @@
   <script type="module">
     import { html, render } from 'lit-html';
     import '../lit-modal.js';
-
-    const backdropActive = true;
+    
     render(
       html`
         <button 
-          @click=${() => document.getElementById('modal').showModal()} 
+          @click=${() => document.getElementById('modal').setModalShow(true)} 
           id="btn"
         >Open modal</button>
-        <lit-modal id="modal" .isBackdropActive=${backdropActive}>
+        <lit-modal id="modal" close-backdrop>
           <div>
             <h1>Title of modal</h1>
             <p>Content of modal</p>

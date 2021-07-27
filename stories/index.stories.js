@@ -6,27 +6,29 @@ export default {
   component: 'lit-modal',
   argTypes: {
     isShow: { control: 'boolean' },
-    isBackdropActive: { control: 'boolean' },
+    closeByBackdrop: { control: 'boolean' },
     textColor: { control: 'color' },
     backgroundColor: { control: 'color' },
     backdropColor: { control: 'color' },
     borderColor: { control: 'color' },
     buttonColor: { control: 'color' },
+    borderRadius: { control: 'text' },
   },
 };
 
 function Template({
   isShow = false,
-  isBackdropActive = true,
+  closeByBackdrop = false,
   textColor = '#000',
   backgroundColor = '#fefefe',
   backdropColor = '#00000040',
   borderColor = '#888',
   buttonColor = '#aaaaaa',
+  borderRadius = '5px',
   slot,
 }) {
   return html`
-    <button @click=${() => document.getElementById('modal').showModal()}>
+    <button @click=${() => document.getElementById('modal').setModalShow(true)}>
       Show modal
     </button>
     <lit-modal
@@ -36,9 +38,10 @@ function Template({
       --lit-modal-backdrop-color: ${backdropColor || '#00000040'};
       --lit-modal-border-color: ${borderColor || '#888'};
       --lit-modal-btn-color: ${buttonColor || '#aaaaaa'};
+      --lit-modal-border-radius: ${borderRadius || '5px'} ;
       "
-      .isShow=${isShow}
-      .isBackdropActive=${isBackdropActive}
+      ?show=${isShow}
+      ?close-backdrop=${closeByBackdrop}
     >
       ${slot}
     </lit-modal>
@@ -47,11 +50,13 @@ function Template({
 
 export const Regular = Template.bind({});
 Regular.args = {
+  closeByBackdrop: true,
   slot: html`<p>Regular component</p>`,
 };
 
 export const SlottedContent = Template.bind({});
 SlottedContent.args = {
+  closeByBackdrop: true,
   slot: html`<h1>Slotted content</h1>
     <p>
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ad
@@ -65,9 +70,6 @@ SlottedContent.argTypes = {
 };
 
 export const BackdropInactive = Template.bind({});
-BackdropInactive.args = {
-  isBackdropActive: false,
-};
 BackdropInactive.args = {
   slot: html`<p>Backdrop inactive</p>`,
 };
