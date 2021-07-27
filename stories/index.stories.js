@@ -12,6 +12,7 @@ export default {
     backdropColor: { control: 'color' },
     borderColor: { control: 'color' },
     buttonColor: { control: 'color' },
+    borderRadius: { control: 'text' },
   },
 };
 
@@ -23,6 +24,7 @@ function Template({
   backdropColor = '#00000040',
   borderColor = '#888',
   buttonColor = '#aaaaaa',
+  borderRadius = '5px',
   slot,
 }) {
   return html`
@@ -36,6 +38,7 @@ function Template({
       --lit-modal-backdrop-color: ${backdropColor || '#00000040'};
       --lit-modal-border-color: ${borderColor || '#888'};
       --lit-modal-btn-color: ${buttonColor || '#aaaaaa'};
+      --lit-modal-border-radius: ${borderRadius || '5px'} ;
       "
       ?show=${isShow}
       ?close-backdrop=${closeByBackdrop}
