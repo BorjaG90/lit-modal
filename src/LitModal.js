@@ -1,5 +1,4 @@
 import { html, css, LitElement } from 'lit-element';
-import { nothing } from 'lit-html';
 import '@polymer/iron-icons/iron-icons.js';
 
 export class LitModal extends LitElement {
@@ -54,7 +53,6 @@ export class LitModal extends LitElement {
 
   static get properties() {
     return {
-      content: { type: String },
       isBackdropActive: { type: Boolean },
       isShow: { type: Boolean },
     };
@@ -62,7 +60,6 @@ export class LitModal extends LitElement {
 
   constructor() {
     super();
-    this.content = '<h1>Hey there</h1>';
     this.isBackdropActive = true;
     this.isShow = false;
   }
@@ -85,7 +82,7 @@ export class LitModal extends LitElement {
     return html`
       <div
         class="backdrop"
-        @click="${this.isBackdropActive ? this.closeModal : nothing}"
+        @click="${this.isBackdropActive ? this.closeModal : null}"
         @keyup="${this.onKeyup}"
         style="${this.isShow ? 'display: block' : 'display: none'}"
       >
