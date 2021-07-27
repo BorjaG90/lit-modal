@@ -20,16 +20,7 @@ describe('LitModal', () => {
   });
 
   it('should show content when the modal is open', async () => {
-    // const el = await fixture(html` <button
-    //     @click="${() => {
-    //       document.querySelector('lit-modal').showModal();
-    //     }}"
-    //   ></button>
-    //   <lit-modal>${content}</lit-modal>`);
-
     const el = await fixture(html` <lit-modal>${content}</lit-modal>`);
-
-    // el.shadowRoot.querySelector('button').click();
 
     el.showModal();
     expect(el.isShow).to.be.true;
@@ -39,7 +30,6 @@ describe('LitModal', () => {
   it('should close the modal when click the button', async () => {
     const el = await fixture(html` <lit-modal isShow>${content}</lit-modal>`);
 
-    // el.showModal();
     expect(el.isShow).to.be.true;
 
     el.shadowRoot.querySelector('.btn-close').click();
@@ -50,8 +40,6 @@ describe('LitModal', () => {
     const el = await fixture(html` <lit-modal isShow>${content}</lit-modal>`);
 
     expect(el.isBackdropActive).to.be.true;
-
-    // el.showModal();
     expect(el.isShow).to.be.true;
 
     el.shadowRoot.querySelector('.backdrop').click();
@@ -64,8 +52,6 @@ describe('LitModal', () => {
     );
 
     expect(el.isBackdropActive).to.be.false;
-
-    // el.showModal();
     expect(el.isShow).to.be.true;
 
     el.shadowRoot.querySelector('.backdrop').click();
