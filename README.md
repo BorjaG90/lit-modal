@@ -1,6 +1,6 @@
 # \<lit-modal>
 ![Project](https://img.shields.io/badge/Project-Work-red.svg)
-![Status](https://img.shields.io/badge/Status-In_progress-brightgreen.svg)
+![Status](https://img.shields.io/badge/Status-Finished-blue.svg)
 ![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)
 <a href="https://github.com/BorjaG90/lit-modal" alt="Github Repository Link">
 <img alt="github repo" src="https://img.shields.io/badge/github-black?logo=github"/>
@@ -8,6 +8,8 @@
 <a href="https://lit.dev/docs/" alt="Documentation Link">
   <img alt="Documentation Link" src="https://img.shields.io/badge/Lit-272f93?logo=lit"/>
 </a>
+![npm](https://img.shields.io/badge/npm-v0.1.0-red.svg)
+
 
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
