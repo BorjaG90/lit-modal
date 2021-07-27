@@ -32,6 +32,7 @@ export class LitModal extends LitElement {
         margin: auto;
         padding: 20px;
         border: 1px solid var(--lit-modal-border-color, #888);
+        border-radius: var(--lit-modal-border-radius, '5px');
         width: 80%;
       }
 
@@ -75,7 +76,6 @@ export class LitModal extends LitElement {
   }
 
   onBackdropClick(e) {
-    console.log(e.target);
     if (e.target.nodeName === 'DIV' && e.target.className === 'backdrop') {
       return this.canBackdropClose ? this.setModalShow(false) : null;
     }
