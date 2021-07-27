@@ -32,6 +32,7 @@ export class LitModal extends LitElement {
         margin: auto;
         padding: 20px;
         border: 1px solid var(--lit-modal-border-color, #888);
+        border-radius: var(--lit-modal-border-radius, '5px');
         width: 80%;
       }
 
@@ -53,23 +54,19 @@ export class LitModal extends LitElement {
 
   static get properties() {
     return {
-      isBackdropActive: { type: Boolean },
-      isShow: { type: Boolean },
+      canBackdropClose: { type: Boolean, attribute: 'close-backdrop' },
+      isShow: { type: Boolean, attribute: 'show' },
     };
   }
 
   constructor() {
     super();
-    this.isBackdropActive = true;
+    this.canBackdropClose = false;
     this.isShow = false;
   }
 
-  showModal() {
-    this.isShow = true;
-  }
-
-  closeModal() {
-    this.isShow = false;
+  setModalShow(value) {
+    this.isShow = value;
   }
 
   onKeyup(e) {
@@ -78,17 +75,24 @@ export class LitModal extends LitElement {
     }
   }
 
+  onBackdropClick(e) {
+    if (e.target.nodeName === 'DIV' && e.target.className === 'backdrop') {
+      return this.canBackdropClose ? this.setModalShow(false) : null;
+    }
+    return null;
+  }
+
   render() {
     return html`
       <div
         class="backdrop"
-        @click="${this.isBackdropActive ? this.closeModal : null}"
+        @click="${this.onBackdropClick}"
         @keyup="${this.onKeyup}"
         style="${this.isShow ? 'display: block' : 'display: none'}"
       >
         <div class="modal">
           <span
-            @click="${this.closeModal}"
+            @click="${() => this.setModalShow(false)}"
             @keyup="${this.onKeyup}"
             class="btn-close"
             >&times;</span
