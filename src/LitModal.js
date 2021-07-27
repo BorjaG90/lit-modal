@@ -74,13 +74,19 @@ export class LitModal extends LitElement {
     }
   }
 
+  onBackdropClick(e) {
+    console.log(e.target);
+    if (e.target.nodeName === 'DIV' && e.target.className === 'backdrop') {
+      return this.canBackdropClose ? this.setModalShow(false) : null;
+    }
+    return null;
+  }
+
   render() {
     return html`
       <div
         class="backdrop"
-        @click="${this.canBackdropClose
-          ? () => this.setModalShow(false)
-          : null}"
+        @click="${this.onBackdropClick}"
         @keyup="${this.onKeyup}"
         style="${this.isShow ? 'display: block' : 'display: none'}"
       >
