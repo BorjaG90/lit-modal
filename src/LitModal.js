@@ -15,6 +15,7 @@ export class LitModal extends LitElement {
       }
 
       .backdrop {
+        display: flex;
         position: fixed;
         z-index: 1;
         padding-top: 100px;
