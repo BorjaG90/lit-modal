@@ -23,7 +23,7 @@ npm i @borjag90dev/lit-modal
 ## Usage
 ```html
 <script type="module">
-  import 'lit-modal/lit-modal.js';
+  import '@borjag90dev/lit-modal.js';
 </script>
 
 <lit-modal></lit-modal>
