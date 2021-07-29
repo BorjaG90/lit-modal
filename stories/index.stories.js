@@ -19,18 +19,36 @@ export default {
 function Template({
   isShow = false,
   closeByBackdrop = false,
-  textColor = '#000',
+  textColor = 'blue',
   backgroundColor = '#fefefe',
   backdropColor = '#00000040',
   borderColor = '#888',
-  buttonColor = '#aaaaaa',
+  buttonColor = 'red',
   borderRadius = '5px',
   slot,
+  modalClose,
 }) {
   return html`
+    <style>
+      .btn-close {
+        color: var(--lit-modal-btn-color, #aaaaaa);
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .btn-close:hover,
+      .btn-close:focus {
+        color: var(--lit-modal-text-color, #000);
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+
     <button @click=${() => document.getElementById('modal').setModalShow(true)}>
       Show modal
     </button>
+
     <lit-modal
       id="modal"
       style="--lit-modal-text-color: ${textColor || '#000'}; 
@@ -43,20 +61,25 @@ function Template({
       ?show=${isShow}
       ?close-backdrop=${closeByBackdrop}
     >
-      ${slot}
+      ${modalClose} ${slot}
     </lit-modal>
   `;
 }
 
 export const Regular = Template.bind({});
+const modalCloseHtml = html`<span slot="modal-close" class="btn-close"
+  >&#62;</span
+>`;
 Regular.args = {
   closeByBackdrop: true,
+  modalClose: modalCloseHtml,
   slot: html`<p>Regular component</p>`,
 };
 
 export const SlottedContent = Template.bind({});
 SlottedContent.args = {
   closeByBackdrop: true,
+  modalClose: modalCloseHtml,
   slot: html`<h1>Slotted content</h1>
     <p>
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione ad
@@ -66,10 +89,12 @@ SlottedContent.args = {
     </p>`,
 };
 SlottedContent.argTypes = {
+  modalClose: modalCloseHtml,
   slot: { table: { disable: true } },
 };
 
 export const BackdropInactive = Template.bind({});
 BackdropInactive.args = {
+  modalClose: modalCloseHtml,
   slot: html`<p>Backdrop inactive</p>`,
 };
