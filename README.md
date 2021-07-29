@@ -1,7 +1,7 @@
 # \<lit-modal>
 
 ![npm](https://img.shields.io/badge/npm-v0.1.3-blue.svg)
-![coverage](https://img.shields.io/badge/coverage-95%-green.svg)
+![coverage](https://img.shields.io/badge/coverage-95%25-green.svg)
 [![install size](https://packagephobia.now.sh/badge?p=@borjag90dev/lit-modal)](https://packagephobia.now.sh/result?p=@borjag90dev/lit-modal)
 [![npm downloads](https://img.shields.io/npm/dm/@borjag90dev/lit-modal.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@borjag90dev/lit-modal)
 ![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
