@@ -92,12 +92,12 @@ export class LitModal extends LitElement {
         style="${this.isShow ? 'display: flex' : 'display: none'}"
       >
         <div class="modal">
-          <span
+          <slot
+            name="modal-close"
+            class=".btn-close"
             @click="${() => this.setModalShow(false)}"
             @keyup="${this.onKeyup}"
-            class="btn-close"
-            >&times;</span
-          >
+          ></slot>
           <slot></slot>
         </div>
       </div>
