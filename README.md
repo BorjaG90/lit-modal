@@ -8,7 +8,7 @@
 <a href="https://lit.dev/docs/" alt="Documentation Link">
   <img alt="Documentation Link" src="https://img.shields.io/badge/Lit-272f93?logo=lit"/>
 </a>
-![npm](https://img.shields.io/badge/npm-v0.1.0-red.svg)
+![npm](https://img.shields.io/badge/npm-v0.1.1-red.svg)
 
 
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
