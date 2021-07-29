@@ -1,6 +1,6 @@
 {
   "name": "@borjag90dev/lit-modal",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Webcomponent lit-modal following open-wc recommendations",
   "author": "BorjaG90",
   "license": "MIT",
