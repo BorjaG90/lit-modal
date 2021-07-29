@@ -1,4 +1,12 @@
 # \<lit-modal>
+
+![npm](https://img.shields.io/badge/npm-v0.1.3-blue.svg)
+![coverage](https://img.shields.io/badge/coverage-95%-green.svg)
+[![install size](https://packagephobia.now.sh/badge?p=@borjag90dev/lit-modal)](https://packagephobia.now.sh/result?p=@borjag90dev/lit-modal)
+[![npm downloads](https://img.shields.io/npm/dm/@borjag90dev/lit-modal.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@borjag90dev/lit-modal)
+![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
+ 
+
 ![Project](https://img.shields.io/badge/Project-Work-red.svg)
 ![Status](https://img.shields.io/badge/Status-Finished-blue.svg)
 ![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)
@@ -8,7 +16,6 @@
 <a href="https://lit.dev/docs/" alt="Documentation Link">
   <img alt="Documentation Link" src="https://img.shields.io/badge/Lit-272f93?logo=lit"/>
 </a>
-![npm](https://img.shields.io/badge/npm-v0.1.1-red.svg)
 
 
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
