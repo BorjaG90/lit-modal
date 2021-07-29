@@ -7,6 +7,20 @@
     body {
       background: #fafafa;
     }
+
+    .btn-close {
+      color: var(--lit-modal-btn-color, #aaaaaa);
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .btn-close:hover,
+    .btn-close:focus {
+      color: var(--lit-modal-text-color, #000);
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -16,7 +30,7 @@
   <script type="module">
     import { html, render } from 'lit-html';
     import '../lit-modal.js';
-    
+
     render(
       html`
         <button 
@@ -24,6 +38,7 @@
           id="btn"
         >Open modal</button>
         <lit-modal id="modal" close-backdrop>
+          <span slot="modal-close" class="btn-close">&times;</span>
           <div>
             <h1>Title of modal</h1>
             <p>Content of modal</p>
