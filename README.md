@@ -1,6 +1,14 @@
 # \<lit-modal>
+
+![npm](https://img.shields.io/badge/npm-v0.1.3-blue.svg)
+![coverage](https://img.shields.io/badge/coverage-95%25-green.svg)
+[![install size](https://packagephobia.now.sh/badge?p=@borjag90dev/lit-modal)](https://packagephobia.now.sh/result?p=@borjag90dev/lit-modal)
+[![npm downloads](https://img.shields.io/npm/dm/@borjag90dev/lit-modal.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@borjag90dev/lit-modal)
+![LICENSE](https://img.shields.io/badge/license-MIT-blue.svg)
+ 
+
 ![Project](https://img.shields.io/badge/Project-Work-red.svg)
-![Status](https://img.shields.io/badge/Status-In_progress-brightgreen.svg)
+![Status](https://img.shields.io/badge/Status-Finished-blue.svg)
 ![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)
 <a href="https://github.com/BorjaG90/lit-modal" alt="Github Repository Link">
 <img alt="github repo" src="https://img.shields.io/badge/github-black?logo=github"/>
@@ -9,19 +17,20 @@
   <img alt="Documentation Link" src="https://img.shields.io/badge/Lit-272f93?logo=lit"/>
 </a>
 
+
 This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
 
 A simple modal web component
 
 ## Installation
 ```bash
-npm i lit-modal
+npm i @borjag90dev/lit-modal
 ```
 
 ## Usage
 ```html
 <script type="module">
-  import 'lit-modal/lit-modal.js';
+  import '@borjag90dev/lit-modal.js';
 </script>
 
 <lit-modal></lit-modal>

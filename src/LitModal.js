@@ -9,15 +9,16 @@ export class LitModal extends LitElement {
   static get styles() {
     return css`
       :host {
-        display: block;
+        display: flex;
         padding: 25px;
         color: var(--lit-modal-text-color, #000);
       }
 
       .backdrop {
+        justify-content: center;
+        align-items: center;
         position: fixed;
         z-index: 1;
-        padding-top: 100px;
         left: 0;
         top: 0;
         width: 100%;
@@ -88,7 +89,7 @@ export class LitModal extends LitElement {
         class="backdrop"
         @click="${this.onBackdropClick}"
         @keyup="${this.onKeyup}"
-        style="${this.isShow ? 'display: block' : 'display: none'}"
+        style="${this.isShow ? 'display: flex' : 'display: none'}"
       >
         <div class="modal">
           <span
