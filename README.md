@@ -17,7 +17,7 @@ A simple modal web component
 
 ## Installation
 ```bash
-npm i lit-modal
+npm i @borjag90dev/lit-modal
 ```
 
 ## Usage
