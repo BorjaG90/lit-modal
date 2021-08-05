@@ -30,6 +30,14 @@ function Template({
 }) {
   return html`
     <style>
+      lit-modal {
+        --lit-modal-text-color: ${textColor || '#000'};
+        --lit-modal-background-color: ${backgroundColor || '#fefefe'};
+        --lit-modal-backdrop-color: ${backdropColor || '#00000040'};
+        --lit-modal-border-color: ${borderColor || '#888'};
+        --lit-modal-btn-color: ${buttonColor || '#aaaaaa'};
+        --lit-modal-border-radius: ${borderRadius || '5px'};
+      }
       .btn-close {
         color: var(--lit-modal-btn-color, #aaaaaa);
         float: right;
@@ -49,18 +57,7 @@ function Template({
       Show modal
     </button>
 
-    <lit-modal
-      id="modal"
-      style="--lit-modal-text-color: ${textColor || '#000'}; 
-      --lit-modal-background-color: ${backgroundColor || '#fefefe'};
-      --lit-modal-backdrop-color: ${backdropColor || '#00000040'};
-      --lit-modal-border-color: ${borderColor || '#888'};
-      --lit-modal-btn-color: ${buttonColor || '#aaaaaa'};
-      --lit-modal-border-radius: ${borderRadius || '5px'} ;
-      "
-      ?show=${isShow}
-      ?close-backdrop=${closeByBackdrop}
-    >
+    <lit-modal id="modal" ?show=${isShow} ?close-backdrop=${closeByBackdrop}>
       ${modalClose} ${slot}
     </lit-modal>
   `;
