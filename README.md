@@ -1,6 +1,6 @@
 # \<lit-modal>
 
-![npm](https://img.shields.io/badge/npm-v0.1.4-blue.svg)
+![npm](https://img.shields.io/badge/npm-v0.2.0-blue.svg)
 ![coverage](https://img.shields.io/badge/coverage-95%25-green.svg)
 [![install size](https://packagephobia.now.sh/badge?p=@borjag90dev/lit-modal)](https://packagephobia.now.sh/result?p=@borjag90dev/lit-modal)
 [![npm downloads](https://img.shields.io/npm/dm/@borjag90dev/lit-modal.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@borjag90dev/lit-modal)
@@ -8,8 +8,6 @@
  
 
 ![Project](https://img.shields.io/badge/Project-Work-red.svg)
-![Status](https://img.shields.io/badge/Status-Finished-blue.svg)
-![Maintained](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)
 <a href="https://github.com/BorjaG90/lit-modal" alt="Github Repository Link">
 <img alt="github repo" src="https://img.shields.io/badge/github-black?logo=github"/>
 </a>
