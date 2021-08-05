@@ -1,5 +1,4 @@
 import { html, css, LitElement } from 'lit-element';
-import '@polymer/iron-icons/iron-icons.js';
 
 export class LitModal extends LitElement {
   static get is() {
