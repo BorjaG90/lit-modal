@@ -84,6 +84,11 @@ export class LitModal extends LitElement {
 
   render() {
     return html`
+      <slot
+        name="modal-open"
+        @click="${() => this.setModalShow(true)}"
+        @keyup="${this.onKeyup}"
+      ></slot>
       <div
         class="backdrop"
         @click="${this.onBackdropClick}"
