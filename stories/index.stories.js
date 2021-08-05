@@ -38,6 +38,7 @@ function Template({
         --lit-modal-btn-color: ${buttonColor || '#aaaaaa'};
         --lit-modal-border-radius: ${borderRadius || '5px'};
       }
+
       .btn-close {
         color: var(--lit-modal-btn-color, #aaaaaa);
         float: right;
@@ -53,20 +54,18 @@ function Template({
       }
     </style>
 
-    <button @click=${() => document.getElementById('modal').setModalShow(true)}>
-      Show modal
-    </button>
-
     <lit-modal id="modal" ?show=${isShow} ?close-backdrop=${closeByBackdrop}>
+      <button slot="modal-open">Show modal</button>
       ${modalClose} ${slot}
     </lit-modal>
   `;
 }
 
-export const Regular = Template.bind({});
 const modalCloseHtml = html`<span slot="modal-close" class="btn-close"
   >&#62;</span
 >`;
+
+export const Regular = Template.bind({});
 Regular.args = {
   closeByBackdrop: true,
   modalClose: modalCloseHtml,
